@@ -14,6 +14,7 @@ public class Runner {
 	public static void main(String[] args)
 	{
 		Room[][] building = new Room[5][5];
+		String fillout="";
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -28,6 +29,15 @@ public class Runner {
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
+
+		for(int i=0;i<building.length;i++)
+		{
+			for(int z=0;z<building.length;z++)
+			{
+				fillout +="o";
+			}
+			System.out.println(fillout);
+		}
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
