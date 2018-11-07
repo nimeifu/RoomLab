@@ -1,6 +1,7 @@
 package Game;
 
 import People.Person;
+import Rooms.Cafeteria;
 import Rooms.Room;
 import Rooms.WinningRoom;
 
@@ -24,11 +25,11 @@ public class Runner {
 				building[x][y] = new Room(x,y);
 			}
 		}
-		
-		//Create a random winning room.
+
 
 		building[2][2] = new WinningRoom(2,2 );
-
+		//build a cafeteria
+		building[1][1]=new Cafeteria(1, 1);
 
 		 
 		 //Setup player 1 and the input scanner
