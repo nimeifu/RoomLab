@@ -5,7 +5,7 @@ import Game.Runner;
 public class Map {
 
 
-    public void editMap(int xLoc)
+    public static Room Map(Room[][],int x)
     {
 
 
