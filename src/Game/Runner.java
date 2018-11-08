@@ -4,7 +4,7 @@ import People.Person;
 import Rooms.Cafeteria;
 import Rooms.Room;
 import Rooms.WinningRoom;
-
+import Board.Map;
 import java.util.Scanner;
 
 public class Runner {
@@ -27,6 +27,7 @@ public class Runner {
 		}
 
 
+
 		building[2][2] = new WinningRoom(2,2 );
 		//build a cafeteria
 		building[1][1]=new Cafeteria(1, 1);
@@ -36,6 +37,19 @@ public class Runner {
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
+
+		String command=in.nextLine();
+		if(command.equalsIgnoreCase("map"))
+		{
+			System.out.print(building[col][row]+"X")
+		}
+		while(command.equalsIgnoreCase("help"))
+		{
+			System.out.println("map-shows the location of the player\n\tbackpack-shows items in the player's backpack\n\tn-moves the player to the North\n\ts-moves the player to the South\n\te-moves the player to the East\n\tw-moves the player to the West");
+		}
+
+
+
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
