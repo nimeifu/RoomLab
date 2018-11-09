@@ -16,6 +16,10 @@ public class Map
         }
 
     }
+    public void backpack()
+    {
+
+    }
 
 
 

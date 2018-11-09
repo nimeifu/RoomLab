@@ -14,6 +14,7 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
+		System.out.println("\tOnly a minority of people were able to move into underground shelters before the Great nuclear war started. 50 years later, you,who was born and grew up in the shelter, was asked to find out what happened in another shelter since it no longer sending signal to other shelters.\n You found that the entry of the shelter had blocked by rocks,like an earthquake had occurred in this area. But you still found a way to get into the shelter. ");
 		Room[][] building = new Room[5][5];
 
 		
@@ -38,16 +39,6 @@ public class Runner {
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 
-		String command=in.nextLine();
-		if(command.equalsIgnoreCase("map"))
-		{
-			System.out.print(building[col][row]+"X")
-		}
-		while(command.equalsIgnoreCase("help"))
-		{
-			System.out.println("map-shows the location of the player\n\tbackpack-shows items in the player's backpack\n\tn-moves the player to the North\n\ts-moves the player to the South\n\te-moves the player to the East\n\tw-moves the player to the West");
-		}
-
 
 
 		while(gameOn)
@@ -59,12 +50,22 @@ public class Runner {
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
 				
 			}
-			else {
+			else if(move.equalsIgnoreCase("map"))
+			{
+				System.out.println(building);
+
+			}
+			else if(move.equalsIgnoreCase("help"))
+			{
+				System.out.println("map-shows the location of the player\n\tbackpack-shows items in the player's backpack\n\tn-moves the player to the North\n\ts-moves the player to the South\n\te-moves the player to the East\n\tw-moves the player to the West");
+			}
+			else
+			{
 				System.out.println("Please choose a valid move.");
 			}
 			
-			
 		}
+
 		in.close();
 	}
 
